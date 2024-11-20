@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+</head>
+<body>    
+    <div class="container">
+        <h3 class="title">Select Preset Filters</h3>
+        
+        <select id="mainFilterSelect"></select>    
+        <select id="subFilterSelect"></select>
+        <button id="goButton">Go</button>
+    </div>
+    
+    <script src="https://d3js.org/d3.v5.min.js" charset="utf-8"></script>
+    <script src="{{ url_for('static', filename='js/index.js') }}"></script>
+</body>
+<style>
+    .title {
+        color: black;
+    }
+
+    .container {
+        padding-left: 40px;
+        padding-top: 10px;
+    }
+    </style>
+</html>

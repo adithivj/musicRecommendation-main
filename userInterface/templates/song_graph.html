@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<link rel="stylesheet" href="https://unpkg.com/ag-grid-community/dist/styles/ag-grid.css">
+<link rel="stylesheet" href="https://unpkg.com/ag-grid-community/dist/styles/ag-theme-balham.css">
+<link rel="stylesheet" href="https://unpkg.com/ag-grid-community/styles/ag-theme-alpine.css"/>
+<script src="https://d3js.org/d3.v5.min.js" charset="utf-8"></script>
+<script src="https://unpkg.com/ag-grid-community/dist/ag-grid-community.min.js"></script>
+<script src="https://unpkg.com/ag-grid-community@28.2.0/dist/ag-grid-community.min.js"></script>
+
+<style>
+
+.link {
+  stroke: #000;
+  stroke-width: 1.5px;
+}
+
+.node {
+  cursor: move;
+  fill: #ccc;
+  stroke: #000;
+  stroke-width: 1.5px;
+}
+
+.node.fixed {
+  fill: #f00;
+}
+
+</style>
+
+<body>
+
+<input type="hidden" id="selectedSongs" name ="selectedSongs" value="{{ selectedSongs }}">
+
+<title>Recommendations</title>
+    <div class="flex-container" style="height: 70px; display: flex; justify-content: space-between; align-items: center;">
+      <div id="title"  style="font-size: 50px;"> Song Recommendations </div>
+      <div id="addToPlayList" >  </div>
+      <div id="endRecommedations" >  </div>
+    </div>
+
+
+    <div>
+      <select name="Recommendation Algorithms" id="recommendationAlgorithm">
+        <option value="NearestNeighbor">NearestNeighbor</option>
+        <option value="Cluster">Cluster</option>
+      </select>
+    </div>
+
+
+    <div class="flex-container" style="margin-top: 10px; justify-content: space-between; display: flex;     align-items: flex-start;">
+      <div id="selectedSongsList"  style="font-size: 20px;   display: flex; flex-direction: column; align-items: flex-start;"> Playlist </div>
+
+      <div id="similarityGraph" style="width:100%"> </div>
+    </div>
+</body>
+
+<script src="{{ url_for('static', filename='js/graph_songs.js') }}"></script>
+</html>

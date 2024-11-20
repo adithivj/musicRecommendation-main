@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<link rel="stylesheet" href="https://unpkg.com/ag-grid-community/dist/styles/ag-grid.css">
+<link rel="stylesheet" href="https://unpkg.com/ag-grid-community/dist/styles/ag-theme-balham.css">
+<link rel="stylesheet" href="https://unpkg.com/ag-grid-community/styles/ag-theme-alpine.css"/>
+
+<style media="only screen">
+    html, body {
+        height: 100%;
+        width: 100%;
+        margin: 0;
+        box-sizing: border-box;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    html {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 0;
+        overflow: auto;
+    }
+
+    body {
+        padding: 1rem;
+        overflow: auto;
+    }
+
+</style>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css')}}" type="text/css">
+<body>
+<title>Top 30 Songs</title>
+    
+    <input type="hidden" id="filterType" name ="filterType" value="{{ filterType }}">
+    <input type="hidden" id="uri" name ="uri" value="{{ uri }}">
+
+    <div class="flex-container" style="height: 70px; justify-content: space-between; align-items: center;">
+      <dv id="title"  style="font-size: 50px;"> Top 30 initial songs by {{ filterType }}</dv>
+      <dv id="recommendButton" >  </dv>
+    </div>
+    <div id="songs" style="height: 100%"  class="ag-theme-alpine"></div>
+</body>
+
+
+<script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+<script src="https://unpkg.com/ag-grid-community/dist/ag-grid-community.min.js"></script>
+<script src="https://unpkg.com/ag-grid-community@28.2.0/dist/ag-grid-community.min.js"></script>
+<script src="{{ url_for('static', filename='js/top_songs.js') }}"></script>
+</html>
