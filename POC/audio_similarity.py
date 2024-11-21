@@ -27,7 +27,7 @@ for playlist in playlists:
 
 final_data_list = []
 
-#spotify = spotipy.Spotify(client_credentials_manager=SpotifyClientCredentials(client_id="9af4046aa77c48a392157c9d5eb6ccd7", client_secret="bbef58ed0c9b4fc9b1b7dc0e36da4362"))
+#spotify = spotipy.Spotify(client_credentials_manager=SpotifyClientCredentials(client_id="", client_secret=""))
 
 spotify = spotipy.Spotify(client_credentials_manager=SpotifyClientCredentials(client_id="af30624c87bc4f1a9b20a8463d2dd836", client_secret="5b613fc553cb4ab78c8a7044563fc899"))
 
